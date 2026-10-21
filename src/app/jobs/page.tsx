@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const JobsPage = () => {
+function JobsPage() {
   return (
     <div>
         <h1 className="text-2xl font-bold text-zinc-800 dark:text-zinc-200">Jobs Page</h1>

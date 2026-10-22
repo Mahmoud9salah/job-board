@@ -10,19 +10,13 @@ export function proxy(request: NextRequest) {
     console.log("Path Name: ", pathName);
 
 
-    // Rule1 : 
-    const isAdminHost = host === "job-board-two-fawn.vercel.app";
-    if (isAdminHost && pathName.includes("admin")) {
-        // Redirect to the admin dashboard
-         console.log("[isAdminHost]Redirecting to Admin Dashboard");
-        return NextResponse.redirect(new URL('/dashboard', request.url))
+
+    if (pathName === '/') {
+    return NextResponse.redirect(new URL('/jobs', request.url));
     }
-    
-    // Rule2 :
-    const isMainDomain = host === "job-board-two-fawn.vercel.app";
-    if (isMainDomain) {
-        console.log("[isMainDomain]Redirecting to Home");
-        return NextResponse.redirect(new URL('/', request.url))
+
+    if (pathName === '/admin' || pathName.startsWith('/admin/')) {
+    return NextResponse.redirect(new URL('/dashboard', request.url));
     }
 
     return NextResponse.next();

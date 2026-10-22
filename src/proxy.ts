@@ -20,7 +20,7 @@ export function proxy(request: NextRequest) {
     
     // Rule2 :
     const isMainDomain = host === "job-board-two-fawn.vercel.app";
-    if (isMainDomain && pathName.includes("admin")) {
+    if (isMainDomain) {
         console.log("[isMainDomain]Redirecting to Home");
         return NextResponse.redirect(new URL('/', request.url))
     }

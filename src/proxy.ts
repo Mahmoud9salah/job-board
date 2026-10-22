@@ -8,18 +8,19 @@ export function proxy(request: NextRequest) {
     const url = request.nextUrl;
     console.log("Host: ", host);
     console.log("Path Name: ", pathName);
-    console.log("URL: ", url);
+
 
     // Rule1 : 
-    const isAdminHost = host.includes("admin.wazifa.app");
-    if (isAdminHost) {
+    const isAdminHost = host === "job-board-two-fawn.vercel.app";
+    if (isAdminHost && pathName.includes("admin")) {
         // Redirect to the admin dashboard
+         console.log("[isAdminHost]Redirecting to Admin Dashboard");
         return NextResponse.redirect(new URL('/dashboard', request.url))
     }
     
     // Rule2 :
-    const isMainDoamin = host.includes("job-board-two-fawn.vercel.app");
-    if (isMainDoamin && pathName.includes("dashboard")) {
+    const isMainDomain = host === "job-board-two-fawn.vercel.app";
+    if (isMainDomain && pathName.includes("dashboard")) {
         console.log("[isMainDomain]Redirecting to Home");
         return NextResponse.redirect(new URL('/', request.url))
     }

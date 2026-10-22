@@ -12,7 +12,7 @@ export function proxy(request: NextRequest) {
 
 
     if (pathName === '/') {
-    return NextResponse.redirect(new URL('/jobs', request.url));
+    return NextResponse.redirect(new URL('/', request.url));
     }
 
     if (pathName === '/admin' || pathName.startsWith('/admin/')) {

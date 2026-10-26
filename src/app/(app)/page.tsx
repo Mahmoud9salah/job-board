@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Home() {
@@ -11,6 +11,7 @@ export default function Home() {
         <Link href="/jobs" className="bg-blue-500 text-white hover:bg-blue-600 py-2 px-4 rounded">
           View Available Jobs
         </Link>
+        <Button variant="destructive">Browse Button</Button>
       </main>
     </div>
   );

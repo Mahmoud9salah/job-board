@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
 export default function Home() {
@@ -8,10 +10,8 @@ export default function Home() {
         <h3 className="text-2xl font-bold text-zinc-800 dark:text-zinc-200">
           Welcome to Job Board App Mr. Mahmoud
         </h3>
-        <Link href="/jobs" className="bg-blue-500 text-white hover:bg-blue-600 py-2 px-4 rounded">
-          View Available Jobs
-        </Link>
-        <Button variant="destructive">Browse Button</Button>
+        <Button variant="secondary">Click here</Button> 
+        <Input placeholder="Enter your name" />      
       </main>
     </div>
   );

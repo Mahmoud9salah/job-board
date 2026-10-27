@@ -5,7 +5,7 @@ function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col">
         <NavbarHeader />
-          {children}
+          <main className="w-full flex-1">{children}</main>
         <NavbarFooter />
     </div>
   );
